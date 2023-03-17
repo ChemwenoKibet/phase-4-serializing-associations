@@ -8,7 +8,7 @@ class DirectorsController < ApplicationController
 
   def show
     director = Director.find(params[:id])
-    render json: director
+    render json: director, include: ['movies', 'movies.reviews']
   end
 
   private
